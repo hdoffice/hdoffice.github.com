@@ -1,0 +1,24 @@
+{% if site.F.nav_total %}
+    {% assign wt = site.F.nav_total %}
+{% else %}
+    {% assign wt = 10 %}
+{% endif %}
+
+{% for weight in (1..wt) %}
+    {% for node in pages_list %}
+        {% if node.title != null %}
+            {% if group == null or group == node.group %}
+                {% if weight == node.weight %}
+                    {% if page.url == node.url %}
+                        <li class="active"><a href="{{ BASE_PATH }}{{node.url}}" class="active">{{node.title}}</a></li>
+                    {% else %}
+                        <li><a href="{{ BASE_PATH }}{{node.url}}">{{node.title}}</a></li>
+                    {% endif %}
+                {% endif %}
+            {% endif %}
+        {% endif %}
+    {% endfor %}
+{% endfor %}
+{% assign wt = nil %}
+{% assign pages_list = nil %}
+{% assign group = nil %}

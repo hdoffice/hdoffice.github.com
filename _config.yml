@@ -1,0 +1,15 @@
+auto: true
+pygments: true
+server_port: 4003
+title : hm&deartree
+author: 
+  name: hm , deartree
+
+F:
+  path:
+    css: /assets/stylesheets
+    scripts: /assets/scripts
+  nav_total: 4
+
+production_url : http://hdoffice.github.com
+
